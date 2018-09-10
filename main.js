@@ -1,5 +1,20 @@
 (function(){
+    function addNewSession(){
+
+    }
+
+    function removeSession(){
+
+    }
+
+    function editSession(){
+        
+    }
+
     function load_sessions(){
+        function load_ex(){
+
+        }
 
     }
     
@@ -12,22 +27,22 @@
             let insights = document.querySelector(".insights .row");
             let container = document.createElement('div');
             Object.keys(response).forEach((k)=> {
-                let pb = document.querySelector(k);
-                let lbl = pb.firstChild();
+                let pb = document.querySelector(`.${k}`);
+                let lbl = pb.firstChild;
                 goal = response[k]['goal'];
                 actual = response[k]['actual'];
                 pb.setAttribute('aria-valuemax', goal);
                 pb.setAttribute('aria-valuenow', actual);
-                lbl.textContent(`${actual}/${goal} ${k}`);
+                lbl.textContent = `${actual}/${goal} ${k}`;
 
             });
 
         } 
 
-        fetch('/insights.json')
+        fetch('data/insight.json')
             .then((r) => {return r.json();})
             .then((r) => {load_insights(r)})
-            .cathc((updateUIFailure()));
+            .catch((updateUIFailure()));
     }
     
     function load_suggested_meals(){
@@ -35,5 +50,11 @@
     }
 
     get_insights();
+
+    load_sessions();
+
+    load_suggested_meals();
+
+    
 })();
 
