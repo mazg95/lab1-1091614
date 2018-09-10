@@ -2,27 +2,32 @@ body {
     margin: 0;
     padding: 0;
     color: #000;
-    background-color: #fff;
+    background-color: #000000;
     font-family: Raleway, Helvetica, Arial, sans-serif;
     font-size: 1.8rem;
     line-height: 160%;
     font-weight: 300;
 }
 
-.header{
-    text-align: center;
-}
-
 
 .header {
     justify-content: space-between;
     text-align: center;
+    background-image: url(assets/imgs/bg3.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 75vh;
+}
+
+.container .tagline{
+    
 }
 
 @media screen and (min-width: 600px) {
     .header .tagline {
         display: block;
-        color: #000000;
+        color: #ffffff;
         max-width: 40em;
         line-height: 140%;
         font-size: 2.5rem;
@@ -62,7 +67,6 @@ a {
 
 
 .nav {
-    margin-top: 1.75rem;
     /* navelements */
 }
 
@@ -85,7 +89,7 @@ a {
     padding: 0 1rem;
     -webkit-transition: 1s ease-out;
     transition: 1s ease-out;
-    color: #000000;
+    color: #ffffff;
     font-size: 2em;
 }
 
@@ -105,5 +109,5 @@ a {
 
 .nav .nav-elements .navbar a:hover:after {
     width: 100%;
-    background: #000000;
+    background:  #f3d350;
 }

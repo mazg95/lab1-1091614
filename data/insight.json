@@ -1,0 +1,14 @@
+{
+    "min_effort": {
+        "goal": 150,
+        "actual": 110
+    },
+    "steps": {
+        "goal": 10000,
+        "actual": 7500
+    },
+    "floors":{
+        "goal": 20,
+        "actual":10
+    }
+}

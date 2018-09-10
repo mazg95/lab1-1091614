@@ -18,40 +18,81 @@
     <header id="home" class="header">
         <nav class="nav" role="navigation">
             <div class="container nav-elements">
-            <div class="row">
-                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                    <a href="#home"><img src="assets/imgs/icon2.jpg" alt="Logo - H Plus Sports"></a>
-                </div><!-- branding -->
-                <ul class="navbar list-inline text-center col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <li><a href="#home">home</a></li>
-                    <li><a href="#history">trainnings</a></li>
-                    <li><a href="#products">food</a></li>
-                </ul><!-- navbar -->
-            </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <a href="#home"><img src="assets/imgs/logo.png" alt="Trainning Gym"></a>
+                    </div><!-- branding -->
+                    <ul class="navbar list-inline text-center col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#history">trainnings</a></li>
+                        <li><a href="#products">food</a></li>
+                    </ul><!-- navbar -->
+                </div>
         </div>
         </nav>
-        <div class="container tagline">
+        <div class="container-fluid tagline">
             <h1>Ayudandote a vivir mejor</h1>
             <p>Apoyamos los estilos de vida <em>activos y saludable</em>, ofreciendo informacion <em>etica y precisa</em>  para los atletas</h1>
         </div>
     </header>
-
-    <div class="principal container">
-        <section class="insights">
-
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#insights">Insights</a></li>
+            <li><a data-toggle="pill" href="#sessions">Sessions</a></li>
+            <li><a data-toggle="pill" href="#meals">Meals</a></li>
+        </ul>
+    </div>
+    <div class="principal container mt32 tab-content">    
+        <section id="insights" class="tab-pane fade in active">
+            <div class="row">
+                <div class=" col-xs-9 col-sm-9 col-md-4 col-lg-4">
+                        <h3>Steps</h3>
+                        <div class="progress">
+                            <div class="progress-bar steps" role="progressbar" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                <span class="sr-only text-capitalize">Steps</span>
+                            </div>  
+                        </div>
+                </div>
+                <div class=" col-xs-9 col-sm-9 col-md-4 col-lg-4">
+                        <h3>Floors</h3>
+                        <div class="progress">
+                            <div class="progress-bar floors" role="progressbar" aria-valuenow="70"
+                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                <span class="sr-only text-capitalize">Floors</span>
+                            </div>  
+                        </div>
+                </div>
+                <div class=" col-xs-9 col-sm-9 col-md-4 col-lg-4">
+                        <h3>Min Effort</h3>
+                        <div class="progress">
+                            <div class="progress-bar min_effort" role="progressbar" aria-valuenow="70"
+                            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                <span class="sr-only text-capitalize">Min Effort</span>
+                            </div>  
+                        </div>
+                </div>  
+            </div>
         </section>
 
-        <section class="sessions">
-
+        <section id="sessions" class="tab-pane fade">
+            <div class="row">
+                <p>HOLA</p>
+            </div>
         </section>
 
-        <section class="suggested-meals">
-
+        <section id="meals" class="tab-pane fade">
+            <div class="row">
+            </div>
         </section>
     </div>
 </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+<script src="main.js"></script>
 
 </html>
