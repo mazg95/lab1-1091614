@@ -1,6 +1,6 @@
 (function(){
     function addNewSession(){
-
+        alert('HOLA');
     }
 
     function removeSession(){
@@ -8,7 +8,7 @@
     }
 
     function editSession(){
-        
+
     }
 
     function load_sessions(){
@@ -17,15 +17,14 @@
         }
 
     }
+
+    	// handle ajax failure
+	function updateUIFailure() {
+        
+    }
     
     function get_insights(){
         function load_insights(response){
-            /*let steps = response.steps;
-            let floors = response.floors;
-            let min_effort = response.min_effort;*/
-
-            let insights = document.querySelector(".insights .row");
-            let container = document.createElement('div');
             Object.keys(response).forEach((k)=> {
                 let pb = document.querySelector(`.${k}`);
                 let lbl = pb.firstChild;
@@ -49,6 +48,8 @@
         
     }
 
+    document.querySelector('.add-session').addEventListener('click', addNewSession, false);
+
     get_insights();
 
     load_sessions();
@@ -57,4 +58,51 @@
 
     
 })();
+
+var sessions_array = [
+    {
+        id:1,
+        fecha: '2018-08-15',
+        duracion: '1h 5min',
+        calorias: 400,
+        fc: 140
+    },{
+        id:2,
+        fecha: '2018-08-15',
+        duracion: '1h 5min',
+        calorias: 400,
+        fc: 140
+    },{
+        id:3,
+        fecha: '2018-08-15',
+        duracion: '1h 5min',
+        calorias: 400,
+        fc: 140
+    },{
+        id:4,
+        fecha: '2018-08-15',
+        duracion: '1h 5min',
+        calorias: 400,
+        fc: 140
+    },{
+        id:5,
+        fecha: '2018-08-15',
+        duracion: '1h 5min',
+        calorias: 400,
+        fc: 140
+    },{
+        id:6,
+        fecha: '2018-08-15',
+        duracion: '1h 5min',
+        calorias: 400,
+        fc: 140
+    },{
+        id:7,
+        fecha: '2018-08-15',
+        duracion: '1h 5min',
+        calorias: 400,
+        fc: 140
+    }
+]
+
 
