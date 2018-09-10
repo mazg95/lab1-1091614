@@ -55,37 +55,32 @@ var sessions_array = [
 
 
 (function(){
-    function addNewSession(){
-        alert('HOLA');
+    function addNewSession(e){
+        let id = e.target.dataset.id;
+        let obj = sessions_array.find((o)=> {
+            return o.id == id;
+        });
+        if(obj){
+            editSession(obj);
+        } else {
+            sessions_array.push({
+                id: document.querySelector('#id').value,
+                fecha: document.querySelector('#date_done').value,
+                fc: document.querySelector('#fc').value,
+                calorias: document.querySelector('#calories').value,
+                duracion: document.querySelector('#duration').value
+            })
+        }
+        load_sessions();
     }
 
     function removeSession(){
-
+        load_sessions();
     }
 
-    function editSession(){
+    function editSession(obj){
 
     }
-
-    /*
-    <div class="container">
-  <h2>List Group With Custom Content</h2>
-  <div class="list-group">
-    <a href="#" class="list-group-item active">
-      <h4 class="list-group-item-heading">First List Group Item Heading</h4>
-      <p class="list-group-item-text">List Group Item Text</p>
-    </a>
-    <a href="#" class="list-group-item">
-      <h4 class="list-group-item-heading">Second List Group Item Heading</h4>
-      <p class="list-group-item-text">List Group Item Text</p>
-    </a>
-    <a href="#" class="list-group-item">
-      <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
-      <p class="list-group-item-text">List Group Item Text</p>
-    </a>
-  </div>
-</div>
-     */
 
     function load_sessions(){
         function load_session(s){
@@ -123,17 +118,30 @@ var sessions_array = [
                     return o.id == id;
                 });
                 let input = document.querySelector('#id');
-                input.textContent = id;
+                input.value = id;
                 input = document.querySelector("#date_done");
-                input.textContent = obj.fecha;
+                input.value = obj.fecha;
                 input = document.querySelector("#duration");
-                input.textContent = obj.duracion;
+                input.value = obj.duracion;
                 input = document.querySelector("#calories");
-                input.textContent = obj.calorias;
+                input.value = obj.calorias;
                 input = document.querySelector("#fc");
-                input.textContent = obj.fc;
+                input.value = obj.fc;
             }, false);
             ss.appendChild(btn);
+
+            btn = document.createElement('button');
+            btn.textContent = 'Remove';
+            btn.setAttribute('class', 'btn btn-default');
+            btn.setAttribute('data-toggle', 'modal');
+            btn.setAttribute('data-target', '#modal-new-sesion');
+            btn.setAttribute('data-id', s.id);
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                removeSession(e.target.dataset.id);
+            }, false);
+            ss.appendChild(btn);
+
             container.appendChild(ss);
         }
         let container = document.querySelector('div.sessions');
