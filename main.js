@@ -75,11 +75,17 @@ var sessions_array = [
     }
 
     function removeSession(){
+        let id = document.querySelector('#id').value
+        alert('Removed');
         load_sessions();
     }
 
     function editSession(obj){
-
+        obj.id = document.querySelector('#id').value;
+        obj.fecha = document.querySelector('#date_done').value;
+        obj.fc = document.querySelector('#fc').value;
+        obj.calorias = document.querySelector('#calories').value;
+        obj.duracion = document.querySelector('#duration').value;
     }
 
     function load_sessions(){
@@ -138,7 +144,20 @@ var sessions_array = [
             btn.setAttribute('data-id', s.id);
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                removeSession(e.target.dataset.id);
+                let id = e.target.dataset.id;
+                let obj = sessions_array.find((o)=> {
+                    return o.id == id;
+                });
+                let input = document.querySelector('#id');
+                input.value = id;
+                input = document.querySelector("#date_done");
+                input.value = obj.fecha;
+                input = document.querySelector("#duration");
+                input.value = obj.duracion;
+                input = document.querySelector("#calories");
+                input.value = obj.calorias;
+                input = document.querySelector("#fc");
+                input.value = obj.fc;
             }, false);
             ss.appendChild(btn);
 
@@ -180,6 +199,7 @@ var sessions_array = [
     }
 
     document.querySelector('.add-session').addEventListener('click', addNewSession, false);
+    document.querySelector('.remove-session').addEventListener('click', removeSession, false);
 
     get_insights();
 
